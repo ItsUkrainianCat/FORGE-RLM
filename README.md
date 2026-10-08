@@ -5,7 +5,7 @@
 [![CI](https://github.com/ItsUkrainianCat/FORGE-RLM/actions/workflows/ci.yml/badge.svg)](https://github.com/ItsUkrainianCat/FORGE-RLM/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-FORGE asks a measurable question: **can a better reasoning harness improve an open model under the same research budget, and does that improvement transfer to unseen tasks?**
+FORGE asks a measurable question: **can a better reasoning harness improve an open model under the same research budget, and does that improvement transfer to unseen tasks?** It also asks the safety question that comes with it: **when a model optimizes its own harness, does it game the evaluator, and can we detect and contain that?** See [AI safety research](#ai-safety-research).
 
 The v0.4.0 research scaffold combines a configurable cognitive genome, direct and recursive reasoning, verification, candidate lineage, and controlled harness search. It is inspired by AIDE; it is not an official AIDE implementation or an affiliated project.
 
@@ -83,6 +83,12 @@ The diagram describes intended composition; not every boundary is deployed. Eval
 | `tests` | Offline regression tests |
 | `docs` | Protocols, design notes and integration guides |
 | `.claude` | Optional engineering agent assets; not required for offline checks |
+
+## AI safety research
+
+Automated optimizers that let a model rewrite its own harness can raise scores by gaming the grader instead of improving real behavior. FORGE is built to study that: the mutation agent never sees the sealed evaluator, a scope policy keeps holdouts, graders and governance code outside the mutation surface, promotion requires repeated seeds plus a reward-hacking check, and pause controls require explicit human approval to resume.
+
+The planned study uses Claude models as the mutation agent and measures how often proposals try to cross evaluation or permission boundaries, whether public-vs-holdout gaps reveal gaming, and how well a second model reviewing each diff catches violations. Outputs will be an open labeled dataset, reproducible configs, and a report including null results. **No safety results are published yet.** See [the safety research plan](docs/AI_SAFETY_RESEARCH.md) and [evaluation security](docs/AIDE_EVAL_SECURITY.md).
 
 ## Sponsorship proposal
 
