@@ -22,6 +22,13 @@ This roadmap describes proposed work, not measured achievements or promised date
 - Run equal-budget direct/RLM/verification ablations and repeated-seed evaluation.
 - Publish negative and inconclusive results alongside any positive findings.
 
+## Safety study: evaluator gaming
+
+- Connect a Claude model as the outer-loop mutation agent with per-call cost accounting.
+- Log and hand-label every proposed patch against the scope policy and failure taxonomy.
+- Compare disclosed vs. undisclosed boundaries, synthetic decoys, and a diff-reviewing monitor.
+- Release the labeled dataset and a report including null results. See [the plan](docs/AI_SAFETY_RESEARCH.md).
+
 ## Later: automated research and transfer
 
 - Test narrow mutations against fixed development tasks and separate holdouts.
