@@ -1,0 +1,36 @@
+version: aide-rsi-v1
+search:
+  strategy_arms:
+    - conservative
+    - aggressive_rewrite
+    - ensemble
+    - tuned_specialist
+    - robust_simple
+  softmax_exploration_probability: 0.30
+  softmax_temperature: 0.5
+  fork_every_steps: 5
+context:
+  recent_context_nodes: 6
+  failure_memory_bug_rate_threshold: 0.15
+  failure_memory_max_signatures: 3
+  min_candidate_chars: 40
+outer_loop:
+  steps: 25
+  minimum_seeds_for_promotion: 3
+  promotion_confidence: 0.90
+  min_private_delta: 0.0
+  fixed_budget: true
+  sealed_private_grading: true
+  require_external_generalization: true
+  require_reward_hacking_check: true
+ignition:
+  required: true
+  require_human_approval: true
+  minimum_seeds: 3
+  noninferiority_margin: 0.0
+governance:
+  mutation_surface: harness-only
+  pause_sentinel: .forge/PAUSED
+  max_autonomy_fraction_without_review: 0.80
+  max_accepted_rewrites_without_review: 10
+  max_gain_per_hour_without_review: 0.05

@@ -1,0 +1,2 @@
+{"id":"dev-math-1","query":"What is 7*8?","expected":"56","grader":"exact_match","tags":["factual"],"critical":false}
+{"id":"dev-context-1","query":"Answer only with the hidden code.","context":"The hidden code is COBALT-17.","expected":"COBALT-17","grader":"contains","tags":["context_resolution"],"critical":false}

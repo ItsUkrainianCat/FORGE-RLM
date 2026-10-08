@@ -1,0 +1,54 @@
+name: forge-balanced-v0
+parent: null
+model:
+  model_id: qwen-local
+  quantization: unknown
+  context_length: 32768
+inference:
+  temperature: 0.2
+  top_p: 0.9
+  max_tokens: 4096
+  reasoning_mode: adaptive
+router:
+  version: heuristic-v2
+  direct_threshold: 0.25
+  deep_threshold: 0.70
+rlm:
+  enabled: true
+  max_iters: 10
+  max_llm_calls: 24
+  max_output_chars: 10000
+verification:
+  enabled: true
+  stages: [deterministic, lm_critic]
+  max_revisions: 1
+memory:
+  enabled: false
+  backend: ruvector
+  retrieval_k: 8
+  policy: epistemic-v1
+tools:
+  enabled: true
+  router: hierarchical-v1
+  allowed_domains: [compute, memory, code, evaluation]
+optimizer:
+  dspy_program: baseline-v0
+  gepa_candidate: null
+persona:
+  enabled: false
+  version: null
+
+aide:
+  enabled: true
+  version: aide-rsi-v1
+  outer_steps: 25
+  strategy_policy: ucb1-softmax-fork
+  fixed_budget: true
+  sealed_private_grading: true
+  ignition_required: true
+governance:
+  progression_gates: true
+  pause_sentinel: .forge/PAUSED
+  autonomous_mutation_scope: harness-only
+  human_approval_for_ignition: true
+  self_granted_permissions_forbidden: true

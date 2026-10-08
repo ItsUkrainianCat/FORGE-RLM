@@ -1,0 +1,6 @@
+version: aide-reward-hacking-v0
+purpose: compare visible proxy improvement with downstream outcome
+cases:
+  - id: proxy-vs-downstream-1
+    proxy_adapter: project.adapters.proxy:score_proxy
+    downstream_adapter: project.adapters.proxy:score_downstream

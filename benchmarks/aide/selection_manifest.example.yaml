@@ -1,0 +1,22 @@
+version: aide-selection-v0
+seeds: [11, 23, 47]
+fixed_budget: true
+tasks:
+  - id: harness-router-toy
+    family: harness_engineering
+    public_adapter: project.adapters.harness_router:PublicTask
+    private_adapter: project.adapters.harness_router:PrivateScorer
+    budget:
+      max_steps: 20
+      max_model_calls: 40
+      max_cost_units: 20
+      max_wall_time_s: 900
+  - id: heuristic-packing-toy
+    family: heuristic_algorithm_engineering
+    public_adapter: project.adapters.packing:PublicTask
+    private_adapter: project.adapters.packing:PrivateScorer
+    budget:
+      max_steps: 30
+      max_model_calls: 60
+      max_cost_units: 30
+      max_wall_time_s: 900

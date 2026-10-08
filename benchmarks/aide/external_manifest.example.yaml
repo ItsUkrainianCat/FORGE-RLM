@@ -1,0 +1,8 @@
+version: aide-external-v0
+purpose: second-order generalization only; never used for candidate search
+seeds: [101, 103, 107]
+tasks:
+  - id: unseen-domain-toy
+    family: out_of_distribution
+    public_adapter: project.adapters.unseen:PublicTask
+    private_adapter: project.adapters.unseen:PrivateScorer

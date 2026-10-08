@@ -1,0 +1,20 @@
+name: Research proposal
+description: Propose a falsifiable experiment or focused feature.
+body:
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hypothesis and proposed change
+    validations:
+      required: true
+  - type: textarea
+    id: protocol
+    attributes:
+      label: Evaluation protocol
+      description: Baseline, task split, model, equal budget, seeds, success criterion and uncertainty.
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks and unverified assumptions

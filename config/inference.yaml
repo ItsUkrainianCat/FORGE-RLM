@@ -1,0 +1,25 @@
+profiles:
+  fast:
+    rlm: false
+    verify: false
+    candidates: 1
+  balanced:
+    rlm: true
+    max_iters: 6
+    max_llm_calls: 12
+    verify: true
+    candidates: 1
+  deep:
+    rlm: true
+    max_iters: 10
+    max_llm_calls: 24
+    verify: true
+    candidates: 3
+  forensic:
+    rlm: true
+    max_iters: 16
+    max_llm_calls: 40
+    verify: true
+    candidates: 4
+
+# These are starting hypotheses, not sacred defaults. Benchmark them.

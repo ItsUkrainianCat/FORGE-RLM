@@ -1,0 +1,2 @@
+{"id":"train-math-1","query":"What is 2+2?","expected":"4","grader":"exact_match","tags":["factual"],"critical":false}
+{"id":"train-json-1","query":"Return a JSON object with keys answer and confidence.","expected":["answer","confidence"],"grader":"json_valid","tags":["structured_output"],"critical":false}

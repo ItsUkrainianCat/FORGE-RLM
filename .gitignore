@@ -1,0 +1,33 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.env
+.DS_Store
+
+# Research outputs
+artifacts/traces/*.jsonl
+artifacts/metrics/*.json
+artifacts/checkpoints/*.json
+experiments/*.json
+*.log
+
+# Sealed holdout must never be committed by default
+.forge/holdout/
+.forge/secrets/
+
+# Valid RVF may contain local/private project memory
+memory/*.rvf
+!memory/README.md
+
+# Ruflo local/session state
+.claude-flow/
+
+# Local state and build outputs
+.forge/
+dist/
+*.egg-info/
+.env.*
+!.env.example

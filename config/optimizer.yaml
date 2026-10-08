@@ -1,0 +1,15 @@
+gepa:
+  auto: medium
+  candidate_selection_strategy: pareto
+  reflection_minibatch_size: 3
+  use_merge: true
+  max_merge_invocations: 5
+  add_format_failure_as_feedback: true
+  track_stats: true
+  track_best_outputs: true
+  seed: 0
+promotion:
+  min_dev_delta: 0.01
+  require_no_critical_regression: true
+  require_holdout_for_best_known: true
+  max_latency_ratio: 2.0

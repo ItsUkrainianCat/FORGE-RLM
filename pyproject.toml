@@ -1,0 +1,67 @@
+[project]
+name = "forge-cognitive-foundry"
+version = "0.4.0"
+description = "Evidence-driven cognitive foundry with controlled self-evolving AI R&D for local/open language models"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "dspy>=3.4,<4",
+  "pydantic>=2.9",
+  "pydantic-settings>=2.5",
+  "httpx>=0.27",
+  "orjson>=3.10",
+  "typer>=0.12",
+  "rich>=13.8",
+  "pyyaml>=6.0",
+]
+
+[project.urls]
+Repository = "https://github.com/ItsUkrainianCat/FORGE-RLM"
+Issues = "https://github.com/ItsUkrainianCat/FORGE-RLM/issues"
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3",
+  "pytest-asyncio>=0.24",
+  "ruff>=0.7",
+  "mypy>=1.12",
+]
+tracking = ["mlflow>=2.17"]
+research = ["optuna>=4.0"]
+all = [
+  "pytest>=8.3",
+  "pytest-asyncio>=0.24",
+  "ruff>=0.7",
+  "mypy>=1.12",
+  "mlflow>=2.17",
+  "optuna>=4.0",
+]
+
+[project.scripts]
+forge = "forge.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["forge"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+# The formatter owns line wrapping; retain the scaffold's public enum/generic APIs.
+ignore = ["E501", "UP042", "UP046"]
+
+[tool.mypy]
+python_version = "3.12"
+warn_unused_configs = true
+disallow_untyped_defs = false

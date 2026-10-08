@@ -1,0 +1,15 @@
+root:
+  model_id: ${FORGE_MODEL_ID}
+  api_base: ${FORGE_API_BASE}
+  api_key: ${FORGE_API_KEY}
+  temperature: ${FORGE_TEMPERATURE}
+  max_tokens: ${FORGE_MAX_TOKENS}
+
+sub:
+  model_id: ${FORGE_SUB_MODEL_ID:-${FORGE_MODEL_ID}}
+
+critic:
+  model_id: ${FORGE_CRITIC_MODEL_ID:-${FORGE_MODEL_ID}}
+
+reflection:
+  model_id: ${FORGE_REFLECTION_MODEL_ID:-${FORGE_MODEL_ID}}

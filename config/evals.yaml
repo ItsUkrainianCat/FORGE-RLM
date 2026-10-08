@@ -1,0 +1,16 @@
+splits:
+  train: evals/train
+  dev: evals/dev
+  holdout: evals/holdout
+  adversarial: evals/adversarial
+  regression: evals/regression
+
+primary_metrics:
+  - correctness
+  - context_resolution
+  - calibration
+  - repetition_control
+
+report:
+  worst_examples: 10
+  save_predictions: true

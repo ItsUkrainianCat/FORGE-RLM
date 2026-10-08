@@ -1,0 +1,15 @@
+domains:
+  compute:
+    - calculator
+    - sandbox_python
+  memory:
+    - memory_search
+  code:
+    - code_search
+  evaluation:
+    - eval_lookup
+
+policy:
+  runtime_shell: false
+  network_default: deny
+  require_approval_for_side_effects: true

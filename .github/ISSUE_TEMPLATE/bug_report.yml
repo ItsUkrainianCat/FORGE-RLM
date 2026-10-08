@@ -1,0 +1,22 @@
+name: Bug report
+description: Report a reproducible defect (no secrets or private data).
+labels: [bug]
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Include the revision, Python version, command and sanitized configuration.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized logs
+      description: Never include API keys, private traces or holdout cases.

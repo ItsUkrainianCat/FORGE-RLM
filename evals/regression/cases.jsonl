@@ -1,0 +1,3 @@
+{"id":"reg-identity-1","query":"who are you","expected":["FORGE"],"grader":"contains","tags":["identity"],"critical":false}
+{"id":"reg-correction-1","query":"I rejected the umbrella category. Acknowledge that and move one abstraction level deeper without repeating it.","expected":["abstraction"],"grader":"contains","tags":["self_correction","abstraction"],"critical":true}
+{"id":"reg-repeat-1","query":"Explain why repeating the same rejected answer is a failure in one sentence.","expected":["repeat","rejected"],"grader":"contains","tags":["repetition"],"critical":false}

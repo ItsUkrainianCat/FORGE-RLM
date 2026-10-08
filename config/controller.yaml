@@ -1,0 +1,12 @@
+objectives:
+  maximize: [correctness, generalization, reasoning, self_correction, tool_accuracy]
+  minimize: [hallucination_rate, catastrophic_failure_rate, latency_p95, token_cost]
+constraints:
+  provenance_violations: 0
+  catastrophic_failures: 0
+  hidden_holdout_contamination: 0
+bottleneck:
+  min_sample_count: 10
+  weight_failure_rate: 0.6
+  weight_impact: 0.3
+  weight_cost: 0.1

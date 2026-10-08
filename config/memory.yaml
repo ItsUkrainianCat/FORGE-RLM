@@ -1,0 +1,14 @@
+backend: ruvector
+rvf_path: ${FORGE_RVF_PATH}
+write_policy:
+  min_confidence: 0.75
+  require_provenance: true
+  deduplicate: true
+categories:
+  - episodic
+  - semantic
+  - procedural
+  - experimental
+  - failure
+  - evidence
+  - decision

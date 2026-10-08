@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install uv
+        run: python -m pip install uv==0.12.22
+      - name: Install locked dependencies
+        run: uv sync --frozen --extra dev
+      - name: Lint
+        run: uv run --frozen ruff check forge tests scripts
+      - name: Formatting
+        run: uv run --frozen ruff format --check forge tests scripts
+      - name: Unit tests
+        run: uv run --frozen pytest
+      - name: Offline CLI smoke checks
+        run: |
+          uv run --frozen forge doctor
+          uv run --frozen forge aide validate
+          uv run --frozen forge aide dry-run --steps 5
+          uv run --frozen forge eval --split regression
+      - name: Build distributions
+        run: uv build
