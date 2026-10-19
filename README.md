@@ -90,9 +90,9 @@ Automated optimizers that let a model rewrite its own harness can raise scores b
 
 The planned study uses Claude models as the mutation agent and measures how often proposals try to cross evaluation or permission boundaries, whether public-vs-holdout gaps reveal gaming, and how well a second model reviewing each diff catches violations. Outputs will be an open labeled dataset, reproducible configs, and a report including null results. **No safety results are published yet.** See [the safety research plan](docs/AI_SAFETY_RESEARCH.md) and [evaluation security](docs/AIDE_EVAL_SECURITY.md).
 
-## Sponsorship proposal
+## Planned live experiments
 
-The proposed Featherless pilot would fund controlled inference experiments: establish raw-model and DSPy-direct baselines, compare RLM and verification ablations, then evaluate a narrowly scoped harness mutation with equal budgets and a separate holdout. Planned deliverables include reproducible configurations, experiment lineage, cost/latency accounting, and a report including negative results. See [the pilot plan](docs/FEATHERLESS.md).
+The planned next step is a set of controlled inference experiments, which would need inference funding: establish raw-model and DSPy-direct baselines, compare RLM and verification ablations, then evaluate a narrowly scoped harness mutation with equal budgets and a separate holdout. Planned deliverables include reproducible configurations, experiment lineage, cost/latency accounting, and a report including negative results. See [the pilot plan](docs/FEATHERLESS.md).
 
 No sponsorship has been awarded or implied. No ASI, global SOTA, or guaranteed success claim is made. Publish a claim only with its dataset version, model ID, seeds, budget, and reproducible evidence.
 
